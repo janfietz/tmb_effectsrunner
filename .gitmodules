@@ -1,0 +1,3 @@
+[submodule "submodules/tmb_effects"]
+	path = submodules/tmb_effects
+	url = git@github.com:janfietz/tmb_effects.git
