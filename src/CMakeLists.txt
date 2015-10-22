@@ -1,9 +1,16 @@
 set(SOURCE
    ${SOURCE}
    ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectDefault.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectFont5x5.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectWandering.cpp
    PARENT_SCOPE
 )
 set(HEADERS
    ${HEADERS}
+   ${CMAKE_CURRENT_SOURCE_DIR}/ITestEffect.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectDefault.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectFont5x5.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectWandering.h
    PARENT_SCOPE
 )
