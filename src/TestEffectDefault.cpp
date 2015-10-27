@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 
-TestEffectDefault::TestEffectDefault()
+TestEffectDefault::TestEffectDefault(int16_t width, int16_t height)
 {
     m_Data.reset = false;
 
@@ -21,9 +21,4 @@ void TestEffectDefault::Update(systime_t ticks, DisplayBuffer& buffer)
     ColorRandom(&m_Cfg.color);
 
     EffectUpdate(&m_Eff, -1, -1, ticks,&buffer);
-}
-
-void TestEffectDefault::Reset(systime_t ticks)
-{
-
 }

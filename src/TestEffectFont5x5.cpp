@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 
-TestEffectFont5x5::TestEffectFont5x5()
+TestEffectFont5x5::TestEffectFont5x5(int16_t width, int16_t height)
 {
     m_Eff.effectcfg = &m_Cfg;
     m_Eff.effectdata = &m_Data;
@@ -40,9 +40,4 @@ void TestEffectFont5x5::Update(systime_t ticks, DisplayBuffer& buffer)
     		m_CharSequenceIdx = 0;
     	}
     }
-}
-
-void TestEffectFont5x5::Reset(systime_t ticks)
-{
-
 }

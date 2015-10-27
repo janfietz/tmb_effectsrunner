@@ -1,16 +1,26 @@
 set(SOURCE
    ${SOURCE}
    ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffect.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectDefault.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectFont5x5.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectWandering.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectFadingPixels.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectRandomPixels.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectFallingPixels.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectPlasma.cpp
    PARENT_SCOPE
 )
 set(HEADERS
    ${HEADERS}
    ${CMAKE_CURRENT_SOURCE_DIR}/ITestEffect.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffect.h
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectDefault.h
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectFont5x5.h
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectWandering.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectFadingPixels.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectRandomPixels.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectFallingPixels.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectPlasma.h
    PARENT_SCOPE
 )

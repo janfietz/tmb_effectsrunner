@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 
-TestEffectWandering::TestEffectWandering()
+TestEffectWandering::TestEffectWandering(int16_t width, int16_t height)
 {
     m_Eff.effectcfg = &m_Cfg;
     m_Eff.effectdata = &m_Data;
@@ -38,9 +38,4 @@ void TestEffectWandering::Update(systime_t ticks, DisplayBuffer& buffer)
     {
         m_Cfg.dir = 1 - m_Cfg.dir;
     }
-}
-
-void TestEffectWandering::Reset(systime_t ticks)
-{
-    EffectReset(&m_Eff, 0, 0, ticks);
 }

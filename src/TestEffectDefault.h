@@ -3,23 +3,21 @@
 #ifndef _TEST_EFFECT_DEFAULT_H_
 #define _TEST_EFFECT_DEFAULT_H_
 
-#include "ITestEffect.h"
+#include "TestEffect.h"
 #include "effect_simplecolor.h"
 
-class TestEffectDefault : public ITestEffect
+class TestEffectDefault : public TestEffect
 {
 public:
 
-    TestEffectDefault();
+    TestEffectDefault(int16_t width, int16_t height);
 
     virtual void Update(systime_t ticks, DisplayBuffer& buffer);
-    virtual void Reset(systime_t ticks);
 
 private:
 
     EffectSimpleColorCfg m_Cfg;
     EffectSimpleColorData m_Data;
-    Effect m_Eff;
 };
 
 #endif

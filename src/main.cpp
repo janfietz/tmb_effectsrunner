@@ -22,6 +22,10 @@
 #include "TestEffectDefault.h"
 #include "TestEffectFont5x5.h"
 #include "TestEffectWandering.h"
+#include "TestEffectFadingPixels.h"
+#include "TestEffectRandomPixels.h"
+#include "TestEffectPlasma.h"
+#include "TestEffectFallingPixels.h"
 
 static bool run = true;
 
@@ -65,6 +69,13 @@ int main(int argc, char *argv[])
 {
     srand(time(NULL));
 
+    DisplayBuffer buffer =
+    {
+        .width = 11,
+        .height = 5,
+        .pixels = (Color**)malloc(11 * 5 * sizeof(Color*))
+    };
+
     ITestEffect* effect = NULL;
     std::string selectedEffect = "default";
     if (argc == 2)
@@ -74,15 +85,31 @@ int main(int argc, char *argv[])
 
     if (selectedEffect == "default")
     {
-        effect = new TestEffectDefault();
+        effect = new TestEffectDefault(buffer.width, buffer.height);
     }
     else if (selectedEffect == "font5x5")
     {
-        effect = new TestEffectFont5x5();
+        effect = new TestEffectFont5x5(buffer.width, buffer.height);
     }
     else if (selectedEffect == "wandering")
     {
-        effect = new TestEffectWandering();
+        effect = new TestEffectWandering(buffer.width, buffer.height);
+    }
+    else if (selectedEffect == "fadingpixels")
+    {
+        effect = new TestEffectFadingPixels(buffer.width, buffer.height);
+    }
+    else if (selectedEffect == "randompixels")
+    {
+        effect = new TestEffectRandomPixels(buffer.width, buffer.height);
+    }
+    else if (selectedEffect == "plasma")
+    {
+        effect = new TestEffectPlasma(buffer.width, buffer.height);
+    }
+    else if (selectedEffect == "fallingpixels")
+    {
+        effect = new TestEffectFallingPixels(buffer.width, buffer.height);
     }
     else
     {
@@ -117,13 +144,6 @@ int main(int argc, char *argv[])
     signal(SIGINT, siginthandler);
 
     fprintf(stdout, "Start loop.\n");
-
-    DisplayBuffer buffer =
-    {
-        .width = 11,
-        .height = 5,
-        .pixels = (Color**)malloc(11 * 5 * sizeof(Color*))
-    };
 
     for (int16_t x = 0; x < buffer.width * buffer.height; ++x)
     {
