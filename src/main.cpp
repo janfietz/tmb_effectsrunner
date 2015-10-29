@@ -26,6 +26,7 @@
 #include "TestEffectRandomPixels.h"
 #include "TestEffectPlasma.h"
 #include "TestEffectFallingPixels.h"
+#include "TestColorBlend.h"
 
 static bool run = true;
 
@@ -110,6 +111,10 @@ int main(int argc, char *argv[])
     else if (selectedEffect == "fallingpixels")
     {
         effect = new TestEffectFallingPixels(buffer.width, buffer.height);
+    }
+    else if (selectedEffect == "colorblend")
+    {
+        effect = new TestColorBlend(buffer.width, buffer.height);
     }
     else
     {

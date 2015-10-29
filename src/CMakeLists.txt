@@ -9,6 +9,7 @@ set(SOURCE
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectRandomPixels.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectFallingPixels.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectPlasma.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestColorBlend.cpp
    PARENT_SCOPE
 )
 set(HEADERS
@@ -22,5 +23,6 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectRandomPixels.h
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectFallingPixels.h
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectPlasma.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestColorBlend.h
    PARENT_SCOPE
 )
