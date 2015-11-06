@@ -23,6 +23,9 @@ TestEffectFallingPixels::TestEffectFallingPixels(int16_t width, int16_t height)
     m_Cfg.spawninterval = 300;
     m_Cfg.fadeperiod = 1000;
 
+    m_Cfg.speed = 100;
+    m_Cfg.speedVariance = 10;
+
     m_Eff.effectcfg = &m_Cfg;
     m_Eff.effectdata = &m_Data;
     m_Eff.update = &EffectFallingPixelsUpdate;

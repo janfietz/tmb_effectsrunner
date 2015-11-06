@@ -26,6 +26,7 @@
 #include "TestEffectRandomPixels.h"
 #include "TestEffectPlasma.h"
 #include "TestEffectFallingPixels.h"
+#include "TestEffectVolume.h"
 #include "TestColorBlend.h"
 
 static bool run = true;
@@ -70,11 +71,13 @@ int main(int argc, char *argv[])
 {
     srand(time(NULL));
 
+    Color pixelColors[11 * 5];
+
     DisplayBuffer buffer =
     {
         .width = 11,
         .height = 5,
-        .pixels = (Color**)malloc(11 * 5 * sizeof(Color*))
+        .pixels = pixelColors,
     };
 
     ITestEffect* effect = NULL;
@@ -111,6 +114,10 @@ int main(int argc, char *argv[])
     else if (selectedEffect == "fallingpixels")
     {
         effect = new TestEffectFallingPixels(buffer.width, buffer.height);
+    }
+    else if (selectedEffect == "volume")
+    {
+        effect = new TestEffectVolume(buffer.width, buffer.height);
     }
     else if (selectedEffect == "colorblend")
     {
@@ -150,11 +157,6 @@ int main(int argc, char *argv[])
 
     fprintf(stdout, "Start loop.\n");
 
-    for (int16_t x = 0; x < buffer.width * buffer.height; ++x)
-    {
-        buffer.pixels[x] = new Color;
-    }
-
     std::vector<uint8_t> colorBuffer;
     colorBuffer.resize(buffer.width * buffer.height * 3);
 
@@ -165,7 +167,7 @@ int main(int argc, char *argv[])
         Color reset = {0, 0, 0};
         for (int16_t x = 0; x < buffer.width * buffer.height; ++x)
         {
-            ColorCopy(&reset, buffer.pixels[x]);
+            ColorCopy(&reset, &buffer.pixels[x]);
         }
 
         effect->Update(ticks, buffer);
@@ -177,7 +179,7 @@ int main(int argc, char *argv[])
                 if (DisplayCoordToLed(x, y, &lednum, &buffer) == true)
                 {
                     uint16_t component = lednum * 3;
-                    Color* col = buffer.pixels[lednum];
+                    Color* col = &buffer.pixels[lednum];
                     colorBuffer[component] = col->R;
                     colorBuffer[component + 1] = col->G;
                     colorBuffer[component + 2] = col->B;
