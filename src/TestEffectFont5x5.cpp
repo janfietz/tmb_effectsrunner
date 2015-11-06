@@ -28,16 +28,16 @@ TestEffectFont5x5::TestEffectFont5x5(int16_t width, int16_t height)
 
 void TestEffectFont5x5::Update(systime_t ticks, DisplayBuffer& buffer)
 {
-	m_Cfg.text[0] = m_CharSequence.at(m_CharSequenceIdx);
+    m_Cfg.text[0] = m_CharSequence.at(m_CharSequenceIdx);
 
     EffectUpdate(&m_Eff, 0, 0, ticks,&buffer);
 
     if (ticks % 1000 == 0)
     {
-    	++m_CharSequenceIdx;
-    	if (m_CharSequenceIdx == m_CharSequence.size())
-    	{
-    		m_CharSequenceIdx = 0;
-    	}
+        ++m_CharSequenceIdx;
+        if (m_CharSequenceIdx == m_CharSequence.size())
+        {
+            m_CharSequenceIdx = 0;
+        }
     }
 }
