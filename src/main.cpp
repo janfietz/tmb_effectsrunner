@@ -27,6 +27,7 @@
 #include "TestEffectPlasma.h"
 #include "TestEffectFallingPixels.h"
 #include "TestEffectVolume.h"
+#include "TestEffectButtons.h"
 #include "TestColorBlend.h"
 
 static bool run = true;
@@ -118,6 +119,10 @@ int main(int argc, char *argv[])
     else if (selectedEffect == "volume")
     {
         effect = new TestEffectVolume(buffer.width, buffer.height);
+    }
+    else if (selectedEffect == "buttons")
+    {
+        effect = new TestEffectButtons(buffer.width, buffer.height);
     }
     else if (selectedEffect == "colorblend")
     {

@@ -11,6 +11,7 @@ set(SOURCE
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectPlasma.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/TestColorBlend.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectVolume.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectButtons.cpp
    PARENT_SCOPE
 )
 set(HEADERS
@@ -26,5 +27,6 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectPlasma.h
    ${CMAKE_CURRENT_SOURCE_DIR}/TestColorBlend.h
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectVolume.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectButtons.h
    PARENT_SCOPE
 )
