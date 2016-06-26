@@ -12,6 +12,7 @@ set(SOURCE
    ${CMAKE_CURRENT_SOURCE_DIR}/TestColorBlend.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectVolume.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectButtons.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectNightSky.cpp
    PARENT_SCOPE
 )
 set(HEADERS
@@ -28,5 +29,6 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/TestColorBlend.h
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectVolume.h
    ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectButtons.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/TestEffectNightSky.h
    PARENT_SCOPE
 )

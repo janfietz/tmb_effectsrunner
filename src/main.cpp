@@ -16,7 +16,7 @@
 #include <errno.h>
 #include <iostream>
 
-#include <time.h> 
+#include <time.h>
 #include <vector>
 
 #include "TestEffectDefault.h"
@@ -29,6 +29,7 @@
 #include "TestEffectVolume.h"
 #include "TestEffectButtons.h"
 #include "TestColorBlend.h"
+#include "TestEffectNightSky.h"
 
 static bool run = true;
 
@@ -72,12 +73,12 @@ int main(int argc, char *argv[])
 {
     srand(time(NULL));
 
-    Color pixelColors[11 * 5];
+    Color pixelColors[15 * 1];
 
     DisplayBuffer buffer =
     {
-        .width = 11,
-        .height = 5,
+        .width = 15,
+        .height =1,
         .pixels = pixelColors,
     };
 
@@ -127,6 +128,10 @@ int main(int argc, char *argv[])
     else if (selectedEffect == "colorblend")
     {
         effect = new TestColorBlend(buffer.width, buffer.height);
+    }
+    else if (selectedEffect == "nightsky")
+    {
+        effect = new TestEffectNightSky(buffer.width, buffer.height);
     }
     else
     {
